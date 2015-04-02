@@ -31,7 +31,7 @@ class ADAuthenticator < ::Auth::Authenticator
 			email: email,
 		}
 		
-		
+		result
 	end
 	
 	def after_create_account(user, auth)
