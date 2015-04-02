@@ -7,10 +7,10 @@ gem 'omniauth-ldap', '1.0.4'
 
 class ADAuthenticator < ::Auth::Authenticator
 
-	DC = ''
-	BASE_DN = ''
-	BIND_DN = ''
-	BIND_PASS = ''
+	DC = Discourse.PluginSettings[:active_directory].authad_domain_controller
+	BASE_DN = Discourse.PluginSettings[:active_directory].authad_base_dn
+	BIND_DN = Discourse.PluginSettings[:active_directory].authad_bind_dn
+	BIND_PASS = Discourse.PluginSettings[:active_directory].authad_bind_pass
 	
 	def name
 		'active_directory'
@@ -18,10 +18,19 @@ class ADAuthenticator < ::Auth::Authenticator
 	
 	def after_authenticate(auth_token)
 		result = Auth::Result.new
+		
+		data = auth_token[:info]
+		raw_info = auth_token["extra"]["raw_info"]
+		name = data["name"]
+		ad_uid = auth_token["uid"]
+		
+		result.user = 
+			
+		result
 	end
 	
 	def after_create_account(user, auth)
-	
+		data = auth[:extra_data]
 	end
 	
 	def register_middleware(omniauth)

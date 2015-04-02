@@ -1,0 +1,9 @@
+active_directory:
+  authad_domain_controller:
+    client: false
+  authad_base_dn:
+    client: false
+  authad_bind_dn:
+    client: false
+  authad_bind_pass:
+    client: false
