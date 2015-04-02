@@ -19,14 +19,19 @@ class ADAuthenticator < ::Auth::Authenticator
 	def after_authenticate(auth_token)
 		result = Auth::Result.new
 		
+		authad_uid = auth_token[:uid]
 		data = auth_token[:info]
-		raw_info = auth_token["extra"]["raw_info"]
-		name = data["name"]
-		ad_uid = auth_token["uid"]
+		result.email = email = data[:email]
+		result.name = name = data[:name]
+
+		result.extra_data = {
+			uid: authad_uid,
+			provider: auth_token[:provider],
+			name: name,
+			email: email,
+		}
 		
-		result.user = 
-			
-		result
+		
 	end
 	
 	def after_create_account(user, auth)
