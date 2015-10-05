@@ -1,9 +1,19 @@
 active_directory:
-  authad_domain_controller:
-    client: false
-  authad_base_dn:
-    client: false
-  authad_bind_dn:
-    client: false
-  authad_bind_pass:
-    client: false
+  ad_domain_controller:
+    default: ''
+    client: true
+  ad_domain_controller_port:
+    default: '389'
+    client: true
+  ad_base_dn:
+    default: ''
+    client: true
+  ad_bind_dn:
+    default: ''
+    client: true
+  ad_bind_pass:
+    default: ''
+    client: true
+  ad_login_attribute:
+    default: 'sAMAccountName'
+    client: true

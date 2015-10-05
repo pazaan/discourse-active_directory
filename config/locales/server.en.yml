@@ -1,6 +1,8 @@
 en:
   site_settings:
-    authad_domain_controller: "Domain Controller"
-    authad_base_dn: "Base DN (i.e. 'dc=example,dc=com')"
-    authad_bind_dn: "Unprivileged user to perform user lookups (i.e. DN=limited_account,CN=Users,DC=example,DC=com)"
-    authad_bind_pass: "Password for unprivileged user"
+    ad_domain_controller: "Domain Controller (eg. ldap.hostname.com)"
+    ad_domain_controller_port: "Hint: try 3268 for Active Directory servers"
+    ad_base_dn: "Base DN (eg. 'dc=example,dc=com')"
+    ad_bind_dn: "Unprivileged user to perform user lookups (eg. DN=limited_account,CN=Users,DC=example,DC=com)"
+    ad_bind_pass: "Password for unprivileged user"
+    ad_login_attribute: "The default attribute is 'sAMAccountName'. Use 'email' if you want to log in with email addresses instead."
